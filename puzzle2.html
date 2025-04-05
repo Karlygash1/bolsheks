@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="kk">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Бөлім 1: Бөлшектер</title>
+    <style>
+        body {
+            background-color: #bfdbfe;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        
+        .container {
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        
+        button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #1e40af;
+        }
+        
+        img {
+            max-width: 100%;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .feedback {
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+        
+        fraction-input {
+            display: inline-block;
+            text-align: center;
+            font-size: 18px;
+        }
+        
+        .fraction-input input {
+            width: 40px;
+            text-align: center;
+            font-size: 18px;
+            padding: 2px;
+        }
+        
+        .fraction-line {
+            display: block;
+            border-top: 2px solid black;
+            width: 40px;
+            margin: 2px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Бөлім 1: Бөлшектер</h2>
+        <p>Төмендегі фигурада <strong>боялған бөлікті</strong> бөлшекпен жаз:</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQRcxT5xSNTIJtIhyI5Kmp6kF_55I2fAC5fDPWx8NOtpQ2o95A20OHVnIKDcXy8ei-Ywf0&usqp=CAU" alt="Фигура" />
+        <div class="fraction-input">
+            <input type="text" id="numerator" placeholder=" " />
+            <span class="fraction-line"></span>
+            <input type="text" id="denominator" placeholder=" " />
+        </div>
+        <br>
+        <button onclick="checkFraction()">Тексеру</button>
+
+        <p id="result"></p>
+
+        <script>
+            function checkFraction() {
+                const num = document.getElementById('numerator').value.trim();
+                const den = document.getElementById('denominator').value.trim();
+                const result = document.getElementById('result');
+
+                if (num === '3' && den === '4') {
+                    result.textContent = "✅ Дұрыс!";
+                    result.style.color = "green";
+                    setTimeout(() => {
+                        // Келесі бетке өту үшін мына жолды өзгертіңіз:
+                        window.location.href = "puzzle2.html";
+                    }, 700);
+                } else {
+                    result.textContent = "❌ Қате. Қайта көріңіз.";
+                    result.style.color = "red";
+                }
+            }
+        </script>
+</body>
+
+</html>
